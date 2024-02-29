@@ -13,15 +13,21 @@ const imtiazInfo: GenericType<{
   name: "Imtiaz",
 };
 //Generic interface
-interface GenericInterface<T> {
+interface GenericInterface<T, U = never> {
   name: string;
-  spouce: T;
+  spouse: T;
+  children?: U;
 }
-const mySpouce: GenericInterface<string> = {
+const mySpouse: GenericInterface<string> = {
   name: "imtiaz",
-  spouce: "sara",
+  spouse: "sara",
 };
-const mySpouce2: GenericInterface<true> = {
+const mySpouse2: GenericInterface<true> = {
   name: "sara",
-  spouce: true,
+  spouse: true,
+};
+const mySpouse3: GenericInterface<string, number> = {
+  name: "sara",
+  spouse: "imtiaz",
+  children: 2,
 };
