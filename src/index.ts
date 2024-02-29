@@ -31,3 +31,22 @@ const mySpouse3: GenericInterface<string, number> = {
   spouse: "imtiaz",
   children: 2,
 };
+// Generic function
+// type AppendTypeGeneric<T, Y, V> = T & { V + '': Y };
+type AppendTypeGeneric<T, Y, V extends string> = T & { [key in V]: Y };
+const myInfo = {
+  name: "imtiaz",
+  age: 30,
+  address: "123 Main St",
+};
+const fatherName = "shahariar";
+const motherName = "shahida";
+function fullInfo(
+  partialInfo: GenericType<typeof myInfo>,
+  infoToAppend: string,
+  key: string,
+): AppendTypeGeneric<typeof myInfo, string, string> {
+  return { ...(partialInfo as any), [key]: infoToAppend };
+}
+console.log(fullInfo(myInfo, fatherName, "fatherName"));
+console.log(fullInfo(myInfo, motherName, "motherName"));
