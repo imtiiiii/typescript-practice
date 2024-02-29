@@ -12,3 +12,16 @@ const imtiazInfo: GenericType<{
   address: "123 Main St",
   name: "Imtiaz",
 };
+//Generic interface
+interface GenericInterface<T> {
+  name: string;
+  spouce: T;
+}
+const mySpouce: GenericInterface<string> = {
+  name: "imtiaz",
+  spouce: "sara",
+};
+const mySpouce2: GenericInterface<true> = {
+  name: "sara",
+  spouce: true,
+};
