@@ -31,3 +31,14 @@ console.log(milesToKm("2 miles"));
 console.log(milesToKm(true));
 console.log(milesToKm("2"));
 console.log(milesToKm("2 miles 2"));
+
+function numberGuard(value: unknown): value is number {
+  return typeof value === "number";
+}
+//* My unknown value will get the type when the type guard function gets called  */
+const myUnknownValue: unknown = 2;
+if (numberGuard(myUnknownValue)) {
+  // myUnknownValue is now a number
+  const tempValue = myUnknownValue;
+  console.log(tempValue);
+}
