@@ -1,10 +1,14 @@
 type GenericType<T> = T;
-type UserType = {
-  name: string;
-  address: string;
-};
+
 const myNumber: GenericType<number> = 2;
-const imtiazInfo: GenericType<UserType> = {
+// type UserType = {
+//   name: string;
+//   address: string;
+// };
+const imtiazInfo: GenericType<{
+  address: string;
+  name: string;
+}> = {
   address: "123 Main St",
   name: "Imtiaz",
 };
