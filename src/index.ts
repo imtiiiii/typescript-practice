@@ -67,3 +67,10 @@ function updateConfig<T extends AllowedKeyType, Y extends typeof config>(
 console.log(
   updateConfig({ chip: "m2", name: "new mac", ram: "16gb" }, "ram", "32gb")
 );
+function configGetter<T extends typeof config, k extends keyof typeof config>(
+  item: T,
+  key: k
+) {
+  return item[key];
+}
+console.log("getter",configGetter(config, "ram"));
