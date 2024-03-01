@@ -44,9 +44,26 @@ const motherName = "shahida";
 function fullInfo(
   partialInfo: GenericType<typeof myInfo>,
   infoToAppend: string,
-  key: string,
+  key: string
 ): AppendTypeGeneric<typeof myInfo, string, string> {
   return { ...(partialInfo as any), [key]: infoToAppend };
 }
-console.log(fullInfo(myInfo, fatherName, "fatherName"));
-console.log(fullInfo(myInfo, motherName, "motherName"));
+// console.log(fullInfo(myInfo, fatherName, "fatherName"));
+// console.log(fullInfo(myInfo, motherName, "motherName"));
+
+const config = {
+  name: "mac",
+  ram: "16gb",
+  chip: "m1",
+};
+type AllowedKeyType = keyof typeof config;
+function updateConfig<T extends AllowedKeyType, Y extends typeof config>(
+  config: Y,
+  key: T,
+  value: (typeof config)[T]
+) {
+  return { ...config, [key]: value };
+}
+console.log(
+  updateConfig({ chip: "m2", name: "new mac", ram: "16gb" }, "ram", "32gb")
+);
