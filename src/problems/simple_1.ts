@@ -30,7 +30,6 @@ interface ILongShortArr {
 function compareArrays(arr1: number[], arr2: number[]): number[] {
   const saveNumbers: ISaveNumbers = {};
   const result: number[] = [];
-  // const { shortArr, longArr } = getLongShortArr(arr1, arr2);
   //? Save the numbers of the shorter array
   for (let i = 0; i < arr2.length; i++) {
     saveNumbers[arr2[i]] = true;
