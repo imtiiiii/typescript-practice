@@ -5,3 +5,4 @@ const arr2: tupleArray = [1, 2, 5];
 //! Type 'string' is not assignable to type 'number'.
 // arr2[12]= 1;
 // Tuple type '[number, number, number]' of length '3' has no element at index '12'.
+export {};
